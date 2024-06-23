@@ -1,22 +1,22 @@
 # AWS DeepRacer:
 
-This repository presents my submission for the AWS DeepRacer competition in which the goal is to have self driving vehicles in a virtual environment. The competition included an initial virtual course to understand the basics of machine learning and how the competition is operated.
+This repository presents my submission for the AWS DeepRacer competition in which the goal is to have self-driving vehicles in a virtual environment. The competition included an initial virtual course to understand the basics of machine learning and how the competition is operated.
 
 ## How to run:
 
-For this specific project, the code in `reward_function.py` was written inside the agent when submitted on the AWS Student Console. Once the agent was in the training phase, I analyzed it's performance when remaining on track to determine it's efficiency. The specific model for this code is recommended to be trained for at least 15 minutes before the agent is able to complete the race track.
+For this specific project, the code in `reward_function.py` was written inside the agent when submitted on the AWS Student Console. Once the agent was in the training phase, I analyzed the performance when remaining on track to determine the efficiency. The specific model for this code is recommended to be trained for at least 15 minutes before the agent can complete the race track.
 
 * *Note: The agent is the car in the simulated environment.*
 
-![Models](./.github_images/models.png)
+![Models](./github_images/models.png)
 
 ### Code Contents:
 
-The contents of `reward_function.py` consists of a function that returns a floating point number which allows the agent to be rewarded or punished based on the direction it takes based on it's surrounding environment.
+The contents of `reward_function.py` is a function that returns a floating point number which allows the agent to be rewarded or punished based on the direction it takes based on the surrounding environment.
 
 ### Code Structure:
 
-There are 4 main parts of the code being the extraction of input data, checking that the wheels are on the road, checking that it's centered, and preventing oversteering.
+There are 4 main parts of the code starting with the extraction of input data, checking that the wheels are on the road, checking that it's centered, and preventing oversteering.
 
 #### Input Data:
 
@@ -73,7 +73,7 @@ elif distance_from_center > marker_4:
 
 #### Preventing Oversteering:
 
-The reward function had multiple different checks to prevent oversteering, one was general and was created to prevent zig zagging, while the other was to make sure that it wasn't going off course from the track.
+The reward function had multiple different checks to prevent oversteering, one was general and was created to prevent zig-zagging, while the other was to make sure that it wasn't going off course from the track.
 
 ```python
 # Penalize the reward if the difference is too large
@@ -94,16 +94,16 @@ Before I submitted my final reward function for the agent, I created 16 differen
 
 ### Format:
 
-The names of each model was in the format `M###` where the `###` was a 3 digit hexadecimal number. However the finalized model ended up including a `-C` for cleaned up, and a `-F` for finalized.
+The names of each model are in the format `M###` where the `###` was a 3 digit hexadecimal number. However, the finalized model ended up including a `-C` for cleaned up, and a `-F` for finalized.
 
 ### Explanations:
 
-Here are each model and an explanation of what they did.
+Here are all models and an explanation of what they did.
 
 - `M000`: The initial template provided by AWS DeepRacer for trying to remain on course.
 - `M001`: Iterated on model `M000` by changing the values and using more of the code provided.
 - `M002`: Modified the values in `M001` to improve performance.
-- `M003`: Modified the values in `M002` and added a prevention for zig zagging.
+- `M003`: Modified the values in `M002` and added prevention for zig zagging.
 - `M004`: Iterated on `M003` and included specific limitations for rotation.
 - `M005`: Iterated on `M004` and improved values for specific limitations for rotation.
 - `M006`: Iterated on `M005` but with a restructured system for calculating the reward function.
@@ -116,7 +116,7 @@ Here are each model and an explanation of what they did.
 - `M00B`: Iteration of `M00A` with different values.
 - `M00C`: Iteration of `M00B` but stronger emphasis on speed
   - *Note: While this model was effective it wasn't performing as well as well as `M007-C`.*
-- `M00D`: Iteration of `M007-C` but stronger emphasis on speed
+- `M00D`: Iteration of `M007-C` but more emphasis on speed
 - `M007-F`: The final model which is primarily the `M007-C` because `M00D` while worked wasn't as effective as `M007-C`
 
 
@@ -124,11 +124,11 @@ Here are each model and an explanation of what they did.
 
 Here is a photo of the final model compiled and was submitted:
 
-![Image](./.github_images/race.png)
+![Image](./github_images/race.png)
 
-Here is a photo of the the best submitted model:
+Here is a photo of my best preforming model:
 
-![Image](./.github_images/time.png)
+![Image](./github_images/time.png)
 
 ## Sources:
 
